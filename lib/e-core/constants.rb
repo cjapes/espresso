@@ -16,15 +16,15 @@ module EspressoFrameworkConstants
   CONTENT_TYPE__DEFAULT      = 'text/html'.freeze
   CONTENT_TYPE__EVENT_STREAM = 'text/event-stream'.freeze
 
-  RESPOND_TO__PARAMETERS = method(methods.first).respond_to?(:parameters)
+  RESPOND_TO__PARAMETERS      = method(methods.first).respond_to?(:parameters)
   RESPOND_TO__SOURCE_LOCATION = proc {}.respond_to?(:source_location)
 
-  STATUS__OK = 200
+  STATUS__OK                 = 200
   STATUS__PERMANENT_REDIRECT = 301
-  STATUS__REDIRECT = 302
-  STATUS__PROTECTED = 401
-  STATUS__NOT_FOUND = 404
-  STATUS__SERVER_ERROR = 500
+  STATUS__REDIRECT           = 302
+  STATUS__PROTECTED          = 401
+  STATUS__NOT_FOUND          = 404
+  STATUS__SERVER_ERROR       = 500
 
   ENV__SCRIPT_NAME    = 'SCRIPT_NAME'.freeze
   ENV__REQUEST_METHOD = 'REQUEST_METHOD'.freeze
@@ -60,7 +60,7 @@ module EspressoFrameworkConstants
 
   VIEW__EXT_BY_ENGINE = Tilt.mappings.sort { |a, b| b.first.size <=> a.first.size }.
     inject({}) { |m, i| i.last.each { |e| m.update e => ('.' + i.first).freeze }; m }
-  
+
   VIEW__DEFAULT_PATH   = 'view/'.freeze
   VIEW__DEFAULT_ENGINE = [Tilt::ERBTemplate]
 
