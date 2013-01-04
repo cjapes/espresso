@@ -1,5 +1,5 @@
+# how much slower is Stuct compared to Hash?
 require 'benchmark'
-
 Example = Struct.new("Example", :value)
 
 struct = Example.new

@@ -1,9 +1,9 @@
+# what's faster: Array.dup or Array.new(some_array) to clone an array?
 require 'benchmark'
 a = ('a'..'z').to_a
 b = a + a
 n = 5000000
 Benchmark.bm do |m|
-  # test assignment and access for Hash and Struct
   m.report { n.times do; b.dup ; end }
   m.report { n.times do; Array.new(b); end }
 end

@@ -1,3 +1,4 @@
+# should you define your delegations manually or rather use the Forwardable module + def_delegator?
 require 'benchmark'
 require 'forwardable'
 
