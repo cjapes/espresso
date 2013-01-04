@@ -7,10 +7,10 @@ hash = {}
 value = "The value"
 
 n = 5000000
-Benchmark.bm do |m|
+Benchmark.bm(10) do |m|
   # test assignment and access for Hash and Struct
-  m.report { n.times do; hash[:value] = value; end }
-  m.report { n.times do; struct.value = value; end }
+  m.report("Hash") { n.times do; hash[:value] = value; end }
+  m.report("Struct") { n.times do; struct.value = value; end }
 end
 
 # ruby-1.9.3-p327-turbo

@@ -3,9 +3,9 @@ require 'benchmark'
 a = ('a'..'z').to_a
 b = a + a
 n = 5000000
-Benchmark.bm do |m|
-  m.report { n.times do; b.dup ; end }
-  m.report { n.times do; Array.new(b); end }
+Benchmark.bm(10) do |m|
+  m.report("array.dup") { n.times do; b.dup ; end }
+  m.report("Array.new") { n.times do; Array.new(b); end }
 end
 # ruby-1.9.3-p327-turbo
 #     user     system      total        real
